@@ -2,7 +2,7 @@
   <div class="col-md-7">
     <div class="form-group">
       <label>Espectrometro: </label>
-      <select [(ngModel)]="espectrometroSeleccionado" class="form-control" name="espectrometro" id="espectrometro" (change)="onSelectEspectrometro($event.target.value)" required>
+      <select [(ngModel)]="espectrometroSeleccionado" class="form-control" name="espectrometro" id="espectrometro" (change)="onSelectEspectrometro(seleccion.value)" required #seleccion>
         <option *ngFor="let espect of espectrometros" [value]="espect">{{espect}}</option>
       </select>
     </div>

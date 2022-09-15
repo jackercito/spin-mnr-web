@@ -6,5 +6,6 @@ export const environment = {
   RESPONSE_TYPE: "token id_token",
   AUDIENCE: "https://api.spin.jackercito/",
   REDIRECT: "https://spin-mnr.vercel.app/callback",
+  URI: "https://spin-server-mnr.onrender.com/*",
   API_URL: "https://spin-server-mnr.onrender.com"
 };

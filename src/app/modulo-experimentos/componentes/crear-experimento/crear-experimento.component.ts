@@ -38,8 +38,7 @@ export class CrearExperimentoComponent {
   ) { }
 
   onSelectEspectrometro(event) {
-    console.log(event);
-    switch (event) {
+    switch (event.value) {
       case ESPECTROMETROS[0]:
         this.sondas = SONDA_A;
         break;
