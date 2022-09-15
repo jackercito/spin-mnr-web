@@ -1,0 +1,104 @@
+<div class="row">
+  <div class="col-md-7">
+    <div class="form-group">
+      <label>Espectrometro: </label>
+      <select [(ngModel)]="espectrometroSeleccionado" class="form-control" name="espectrometro" id="espectrometro" (change)="onSelectEspectrometro($event.target.value)" required>
+        <option *ngFor="let espect of espectrometros" [value]="espect">{{espect}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="col-md-7">
+    <div class="form-group">
+      <label>Sondas: </label>
+      <select [(ngModel)]="sondaSeleccionada" class="form-control" name="sonda" id="sonda" required>
+        <option *ngFor="let sond of sondas" [value]="sond">{{sond}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="col-md-7">
+    <div class="form-group">
+      <label>Fecha de entrada: </label>
+      <input type="date" class="form-control" [ngModel]="experimento.fecha_entrada | date:'yyyy-MM-dd'" name="fecha_entrada" (ngModelChange)="finDateFechaEntrada = $event" required>
+    </div>
+  </div>
+
+  <div class="col-md-7">
+    <div class="form-group">
+      <label>Usuario de entrada: </label>
+      <input type="text" class="form-control" name="usuario_entrada" [(ngModel)]="experimento.usuario_entrada" required>
+    </div>
+  </div>
+
+  <div class="col-md-7">
+    <div class="form-group">
+      <label>Muestra: </label>
+      <input type="text" class="form-control" name="muestra" [(ngModel)]="experimento.muestra" required>
+    </div>
+  </div>
+
+  <div class="col-md-7" *ngIf="espectrometroSeleccionado == 'ESPECTRÓMETRO BRUKER AVANCE III / HD(Muestras sólidas)'">
+    <div class="form-group">
+      <label>Nucleo: </label>
+      <input type="text" class="form-control" name="usuario_entrada" [(ngModel)]="experimento.nucleo">
+    </div>
+  </div>
+
+  <div class="col-md-7">
+    <div class="form-group">
+      <label>ID Solicitud: </label>
+      <input type="text" class="form-control" name="id_solicitud" [(ngModel)]="experimento.solicitud" required>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <label for="finalizado"> Finalizado </label>
+    <div class="form-group input-group">
+      <label for="finalizado" class="checkbox-inline">
+        <input type="checkbox" class="form-control" [(ngModel)]="experimento.completo" name="finalizado" required> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </label>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <label for="finalizado"> Recuperar muestra:</label>
+    <div class="form-group input-group">
+      <label for="visible" class="checkbox-inline">
+        <input type="checkbox" class="form-control" [(ngModel)]="experimento.visible" name="visible"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </label>
+    </div>
+  </div>
+
+  <div class="col-md-7">
+    <br />
+  </div>
+
+  <div class="col-md-7" *ngIf="experimento.completo && experimento.visible">
+    <div class="form-group">
+      <label>Fecha de salida: </label>
+      <input type="date" class="form-control" [ngModel]="experimento.fecha_salida | date:'yyyy-MM-dd'" name="fecha_salida" (ngModelChange)="finDateFechaSalida = $event">
+    </div>
+  </div>
+
+  <div class="col-md-7" *ngIf="experimento.completo && experimento.visible">
+    <div class="form-group">
+      <label>Usuario de salida: </label>
+      <input type="text" class="form-control" name="usuario_salida" [(ngModel)]="experimento.usuario_salida">
+    </div>
+  </div>
+
+  <div class="col-md-6 form-group">
+    <button (click)="editarExperimento()" class="btn btn-warning">
+      Guardar
+      <span class="glyphicon glyphicon-save"></span>
+    </button>
+  </div>
+
+  <div class="col-md-6 form-group">
+    <button class="btn btn-info" type="button" (click)="goBack()">
+      Volver
+      <span class="glyphicon glyphicon-share-alt"></span>
+    </button>
+  </div>
+</div>

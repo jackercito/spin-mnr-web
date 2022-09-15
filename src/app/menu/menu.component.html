@@ -1,0 +1,64 @@
+<label class="powered">Powered by Jackercito</label>
+<nav class="navbar navbar-default sidebar margen-derecho" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+        <span class="sr-only">Menu</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li align="center">
+        <img src="assets/images/rmn2.png" class="logo2 active hidden-xs hidden-md hidden-sm" />
+        <br />
+        <a href="#" class="nohover">
+          <img src="assets/images/logo.jpg" class="logo active hidden-xs hidden-md hidden-sm" />
+        </a>
+        <br />
+      </li>
+
+      <li routerLinkActive="active">
+        <a href="#">
+          Home
+          <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>
+        </a>
+      </li>
+
+      <ng-template #loggedOut>
+        <li routerLinkActive="active">
+          <a class="pointer" (click)="auth.loginWithRedirect()">
+            Login
+            <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-log-in"></span>
+          </a>
+        </li>
+      </ng-template>
+
+      <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a routerLink="/experimentos/listar">
+            Listar Experimentos
+            <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span>
+          </a>
+        </li>
+
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a routerLink="/experimentos/nuevo">
+            Nuevo Experimento
+            <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-file"></span>
+          </a>
+        </li>
+
+        <li routerLinkActive="active">
+          <a class="pointer" (click)="auth.logout({ returnTo: document.location.origin })">
+            Logout
+            <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-log-out"></span>
+          </a>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</nav>

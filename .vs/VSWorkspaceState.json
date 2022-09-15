@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\menu",
+    "\\src\\app\\modulo-experimentos",
+    "\\src\\app\\modulo-experimentos\\componentes",
+    "\\src\\app\\modulo-experimentos\\componentes\\listar-experimentos",
+    "\\src\\app\\modulo-experimentos\\services",
+    "\\src\\environments"
+  ],
+  "SelectedNode": "\\src",
+  "PreviewInSolutionExplorer": false
+}

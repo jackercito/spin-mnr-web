@@ -1,1 +1,73 @@
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-alpine.css';
+
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: gainsboro;
+  margin-left: 5px;
+}
+
+.right-space {
+  margin-right: 1em;
+}
+
+.right-big-space {
+  margin-right: 16em;
+}
+
+.right-intermedio-space {
+  margin-right: 3em;
+}
+
+
+.left-space {
+  margin-left: 1em;
+}
+
+.left-big-space {
+  margin-left: 16em;
+}
+
+.remove-float {
+  float: none;
+}
+
+.top-scpace {
+  margin-top: 1.5em;
+}
+
+.big-top-space {
+  margin-top: 100px;
+}
+
+.logo {
+  max-height: 180px;
+  max-width: 180px;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.ocultar {
+  visibility: hidden;
+}
+
+.letra-pequeña {
+  font-size: 70%;
+}
+
+.texto-centrado {
+  text-align: center
+}
+
+.bordes {
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+}

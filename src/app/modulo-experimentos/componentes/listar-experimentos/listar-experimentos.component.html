@@ -1,0 +1,41 @@
+<br />
+<br />
+<div class="col-md-12">
+  <ag-grid-angular
+      style="width: 100%; height: 720px;"
+      class="ag-theme-alpine"
+      [columnDefs]="columnDefs"
+      [defaultColDef]="defaultColDef"
+      [rowData]="rowData$ | async"
+      [rowSelection]="'multiple'"
+      [animateRows]="true"
+      (gridReady)="onGridReady($event)"
+      (filterChanged)="onFilterChanged($event)"
+      (sortChanged)="onFilterChanged($event)"
+      (columnResized)="onFilterChanged($event)"
+      (columnVisible)="onFilterChanged($event)"
+      (columnPivotChanged)="onFilterChanged($event)"
+      (columnRowGroupChanged)="onFilterChanged($event)"
+      (columnValueChanged)="onFilterChanged($event)"
+      (columnMoved)="onFilterChanged($event)"
+      (columnPinned)="onFilterChanged($event)">
+  </ag-grid-angular>
+</div>
+
+<div class="col-md-6 derecha">
+  <br />
+  <label style="margin-left: 20px;">
+    <button (click)="onBtExport()" class="btn btn-primary">
+      Exportar CSV &nbsp;&nbsp;
+      <span class="glyphicon glyphicon-download"></span>
+    </button>
+  </label>
+</div>
+
+<div class="col-md-6 derecha">
+  <br />
+  <a class="btn btn-danger" (click)="resetearFiltros()">
+    Borrar Filtros &nbsp;
+    <span class="glyphicon glyphicon-remove"></span>
+  </a>
+</div>

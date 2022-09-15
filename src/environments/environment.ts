@@ -3,8 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: true,
+  RETURN_URL: "",
+  CLIENT_ID: "",
+  CLIENT_DOMAIN: "",
+  RESPONSE_TYPE: "",
+  AUDIENCE: "",
+  REDIRECT: "",
+  URI: "",
+  API_URL: ""
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+//import { Auth0Service } from './services/auth0.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'spin-mnr-web';
+  isCollapsed: boolean = false;
 }
