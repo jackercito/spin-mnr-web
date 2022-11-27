@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
 import { Experimento } from '../../modelo/experimento.model'
 
 const ESPECTROMETROS = ['ESPECTRÓMETRO BRUKER AVANCE NEO', 'ESPECTRÓMETRO BRUKER AVANCE III / 500(Muestras Líquidas)', 'ESPECTRÓMETRO BRUKER AVANCE III / HD(Muestras sólidas)'];
-const SONDA_A = ['PI HR BB0400 (5mm)', 'PA BBI400 S1 (5mm)']
+const SONDA_A = ['PI HR BB0400 (5mm)', 'PA BBI400 S1 (5mm)', 'PA BBI400 DIFF (5mm)']
 const SONDA_B = ['PABBI (5mm)', 'PASEX (10mm)']
 const SONDA_C = ['SPRB400172_7164 (7,5mm)', 'SPRB400172_7423 (7,5mm)', 'H8906-20_007 (Triple Resonancia)', 'H13664_0016 (2,5mm)', 'H12138_0076 (Dobe Resonancia)', 'H13349_0014 (Baja frecuencia)']
 
@@ -38,7 +38,7 @@ export class CrearExperimentoComponent {
   ) { }
 
   onSelectEspectrometro(event) {
-    switch (event.value) {
+    switch (event) {
       case ESPECTROMETROS[0]:
         this.sondas = SONDA_A;
         break;
